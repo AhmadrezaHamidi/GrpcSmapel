@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcClientSample.Protos";
+
+service SMS{
+	rpc Send (SendSMSRequest) returns (SendSMSResponse);
+}
+
+message SendSMSRequest{
+	string mobile=1;
+	string message=2;
+}
+
+message SendSMSResponse{
+	bool IsSent = 1;
+}
+
